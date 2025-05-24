@@ -66,44 +66,6 @@ Ensure WSL 2 or Hyper-V is enabled.
 During installation, enable Docker Compose support.
 
 
-
-Verify Docker Installation
-Check Docker and Docker Compose versions:
-docker --version
-docker compose version
-
-Configure Docker Compose
-The docker-compose.yml file should look like this:
-version: '3.8'
-services:
-  backend:
-    build: ./backend
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgresql://postgres:ND!83766619@db:5432/poker
-  frontend:
-    build: ./frontend
-    ports:
-      - "3001:3000"
-    depends_on:
-      - backend
-  db:
-    image: postgres:15
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=ND!83766619
-      - POSTGRES_DB=poker
-    ports:
-      - "5433:5432"
-    volumes:
-      - db-data:/var/lib/postgresql/data
-volumes:
-  db-data:
-
-
 Notes:
 backend: FastAPI app on port 8000.
 frontend: Next.js app on port 3001 (mapped to 3000 in the container).
