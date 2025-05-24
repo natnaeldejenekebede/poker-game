@@ -1,0 +1,36 @@
+ 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node.js
+node_modules/
+.next/
+dist/
+build/
+
+# Docker
+*.log
+*.pid
+*.seed
+docker-compose.yml  # Exclude due to sensitive POSTGRES_PASSWORD
+
+# Database
+db-data/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+*.env

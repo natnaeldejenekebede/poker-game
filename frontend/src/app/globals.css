@@ -1,0 +1,63 @@
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-green-900 to-green-700 text-white font-sans;
+    background-image: url('https://www.transparenttextures.com/patterns/green-felt.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+.container {
+  @apply max-w-6xl mx-auto p-6;
+}
+
+.card {
+  @apply bg-gray-800/90 backdrop-blur-sm border-gray-700 rounded-lg shadow-lg p-4;
+}
+
+h1 {
+  @apply text-3xl font-bold text-center mb-6 text-yellow-300 drop-shadow-md;
+}
+
+h2 {
+  @apply text-xl font-semibold mb-2 text-white;
+}
+
+p.description {
+  @apply text-sm text-gray-400 mb-4;
+}
+
+.btn-fold {
+  @apply bg-gray-500 hover:bg-gray-400 text-white transition-transform hover:scale-105;
+}
+
+.btn-check {
+  @apply bg-blue-600 hover:bg-blue-500 text-white transition-transform hover:scale-105;
+}
+
+.btn-call {
+  @apply bg-green-600 hover:bg-green-500 text-white transition-transform hover:scale-105;
+}
+
+.btn-bet,
+.btn-raise {
+  @apply bg-yellow-600 hover:bg-yellow-500 text-white transition-transform hover:scale-105;
+}
+
+.btn-allin {
+  @apply bg-red-600 hover:bg-red-500 text-white transition-transform hover:scale-105;
+}
+
+.btn-adjust {
+  @apply bg-gray-600 hover:bg-gray-500 text-white w-10 h-10 flex items-center justify-center transition-transform hover:scale-105;
+}
+
+.action-input {
+  @apply w-16 text-center bg-gray-700 border-gray-600 text-white;
+}
