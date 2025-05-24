@@ -67,7 +67,6 @@ Development
 Backend (FastAPI with Poetry)
 
 Set Up Poetry Environment:Navigate to the backend directory:
-```bash
 cd backend
 poetry install
 
