@@ -25,7 +25,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      - DATABASE_URL=postgresql://postgres:ND!83766619@db:5432/poker
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@db:5432/poker
     # volumes:
     #   - ./backend:/app
 
