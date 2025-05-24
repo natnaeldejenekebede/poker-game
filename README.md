@@ -70,7 +70,7 @@ Set Up Poetry Environment:Navigate to the backend directory:
 ```bash
 cd backend
 poetry install
-```
+
 
 Activate the virtual environment:
 poetry shell
