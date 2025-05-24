@@ -1,6 +1,7 @@
-Poker Game Coding Exercise
+**Poker Game Coding Exercise**
 A fullstack web application for simulating a 6-player Texas Hold'em poker game, built with FastAPI (backend), Next.js (frontend), and PostgreSQL (database). Users can play a hand from preflop to river, log actions, save hands to the database, and view hand history. The project follows the repository pattern, uses the pokerkit library for win/loss calculations, and is deployed via Docker Compose.
-Project Structure
+
+**Project Structure**
 
 backend/: FastAPI backend with raw SQL repository pattern for hand management.
 pyproject.toml: Poetry configuration for dependencies.
