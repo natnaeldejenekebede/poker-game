@@ -139,18 +139,18 @@ Deployment: Docker Compose for database (postgres:15), backend, and frontend.
 
 Troubleshooting
 
-Database Issues: Verify .env matches docker-compose.yml.
-API Errors: Check logs with docker compose logs backend.
-pgAdmin: Connect to localhost:5433, database poker, user postgres.
-Hand Not Saving: Ensure backend connects to db:5432 (check logs).
-Poetry Issues: Ensure Poetry is installed (poetry --version) and run poetry install.
+- Database Issues: Verify .env matches docker-compose.yml.
+- API Errors: Check logs with docker compose logs backend.
+- pgAdmin: Connect to localhost:5433, database poker, user postgres.
+- Hand Not Saving: Ensure backend connects to db:5432 (check logs).
+- Poetry Issues: Ensure Poetry is installed (poetry --version) and run poetry install.
 
 Notes
 
-No authentication/authorization required.
-Layout follows wireframes with shadcn/ui styling.
-Game logic validated on both client and server.
-Short action format: f (Fold), x (Check), c (Call), bAMOUNT (Bet), rAMOUNT (Raise), allin.
+- No authentication/authorization required.
+- Layout follows wireframes with shadcn/ui styling.
+- Game logic validated on both client and server.
+- Short action format: f (Fold), x (Check), c (Call), bAMOUNT (Bet), rAMOUNT (Raise), allin.
 
 License
 MIT License (see LICENSE file, if included).
