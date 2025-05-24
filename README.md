@@ -57,11 +57,11 @@ Database: localhost:5433 (use pgAdmin or psql)
 
 Usage
 
-Start/Reset Hand: Click "Start" (becomes "Reset" after actions) to deal new hands.
-Take Actions: Use buttons (Fold, Check, Call, Bet, Raise, All-in) to play the hand. Invalid actions are disabled.
-Adjust Bet/Raise: Use +/- buttons to set amounts in increments of 40 (big blind size).
-View Logs: Actions appear in the play log (left) in the format [Player] [Action] [Amount].
-Hand History: Completed hands are saved to the database and displayed (right) with UUID, stacks, positions, cards, actions (short format: f, x, c, bAMOUNT, rAMOUNT, allin), and winnings.
+- Start/Reset Hand: Click "Start" (becomes "Reset" after actions) to deal new hands.
+- Take Actions: Use buttons (Fold, Check, Call, Bet, Raise, All-in) to play the hand. Invalid actions are disabled.
+- Adjust Bet/Raise: Use +/- buttons to set amounts in increments of 40 (big blind size).
+- View Logs: Actions appear in the play log (left) in the format [Player] [Action] [Amount].
+- Hand History: Completed hands are saved to the database and displayed (right) with UUID, stacks, positions, cards, actions (short format: f, x, c, bAMOUNT, rAMOUNT, allin), and winnings.
 
 Development
 Backend (FastAPI with Poetry)
