@@ -115,23 +115,23 @@ docker compose up -d --build frontend
 
 Database
 
-Manage with psql -h localhost -p 5433 -U postgres -d poker or pgAdmin.
-Schema: hands table with JSONB columns for stacks, cards, actions, winnings.
+- Manage with psql -h localhost -p 5433 -U postgres -d poker or pgAdmin.
+- Schema: hands table with JSONB columns for stacks, cards, actions, winnings.
 
 Technical Details
 
 Backend:
-FastAPI with raw SQL (no ORM) and repository pattern.
-@dataclass for entities.
-pokerkit for win/loss calculations.
-Poetry for dependency management (pyproject.toml).
-PEP8-compliant code with API tests.
+- FastAPI with raw SQL (no ORM) and repository pattern.
+- @dataclass for entities.
+- pokerkit for win/loss calculations.
+- Poetry for dependency management (pyproject.toml).
+- PEP8-compliant code with API tests.
 
 
 Frontend:
-Next.js with TypeScript and shadcn/ui.
-Single-page app with game logic separated from UI.
-Integration tests for hand simulation.
+- Next.js with TypeScript and shadcn/ui.
+- Single-page app with game logic separated from UI.
+- Integration tests for hand simulation.
 
 
 Database: PostgreSQL with hands table (stores stacks, cards, actions, winnings as JSONB).
@@ -153,4 +153,4 @@ Notes
 - Short action format: f (Fold), x (Check), c (Call), bAMOUNT (Bet), rAMOUNT (Raise), allin.
 
 License
-MIT License (see LICENSE file, if included).
+- MIT License (see LICENSE file, if included).
