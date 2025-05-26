@@ -13,7 +13,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 async def lifespan(app: FastAPI):
     try:
         import os
-        database_url = os.getenv("DATABASE_URL", "postgresql://postgres:ND!83766619@localhost:5432/poker")
+        database_url = os.getenv("DATABASE_URL")
+        if not database_url:
+            raise ValueError("DATABASE_URL environment variable not set")
         print(f"Using DATABASE_URL: {database_url}")
 
         await init_db_pool()
@@ -22,14 +24,19 @@ async def lifespan(app: FastAPI):
 
         pool = await asyncpg.create_pool(database_url)
         async with pool.acquire() as conn:
+            # Verify database connection
+            version = await conn.fetchval("SELECT version();")
+            print(f"Connected to PostgreSQL: {version}")
+
+            # Check schema for hands table
             schema = await conn.fetch(
                 """
                 SELECT column_name, data_type
                 FROM information_schema.columns
-                WHERE table_name = 'hands' AND column_name = 'stacks'
+                WHERE table_name = 'hands'
                 """
             )
-            print(f"Schema for stacks: {schema}")
+            print(f"Schema for hands table: {schema}")
         await pool.close()
 
     except Exception as e:

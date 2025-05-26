@@ -1,3 +1,5 @@
+# poker_game/api/hands.py 
+
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, validator
@@ -128,7 +130,7 @@ async def get_db_pool() -> asyncpg.Pool:
         )
     return db_pool
 
-@router.post("/create", response_model=HandCreateResponse, status_code=201)
+@router.post("/", response_model=HandCreateResponse, status_code=201)
 async def create_hand(
     hand_data: HandCreateRequest,
     pool: asyncpg.Pool = Depends(get_db_pool)
@@ -198,6 +200,23 @@ async def get_hands(
             repo = HandRepository(conn)
             hands = await repo.find_all(limit, offset)
             return hands
+    except asyncpg.PostgresError as e:
+        raise HTTPException(status_code=400, detail=f"Database error: {str(e)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
+
+@router.get("/{hand_id}", response_model=Dict)
+async def get_hand_by_id(
+    hand_id: UUID,
+    pool: asyncpg.Pool = Depends(get_db_pool)
+):
+    try:
+        async with pool.acquire() as conn:
+            repo = HandRepository(conn)
+            hand = await repo.find_one_by_id(hand_id)
+            if hand is None:
+                raise HTTPException(status_code=404, detail="Hand not found")
+            return hand
     except asyncpg.PostgresError as e:
         raise HTTPException(status_code=400, detail=f"Database error: {str(e)}")
     except Exception as e:

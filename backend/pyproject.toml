@@ -3,7 +3,7 @@ name = "poker-backend"
 version = "0.1.0"
 description = ""
 authors = ["Natnael Dejene <natnaeldejene19@gmail.com>"]
-packages = [{include = "src"}]
+packages = [{include = "poker_game", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
